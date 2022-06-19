@@ -105,14 +105,14 @@
           rsFree = true;
           is = true;                                //record do issue
           break;}}
-		    if (!rsFree)
-			    return 1;
+       if (!rsFree)
+         return 1;
     break;                                          //break case
     ------------------------------------------------------------------------------------------------------------------------------------
     int ch = 0;
     ch = inst[cur_issue - 1].rs[1] - '0';             //first oprand of instruction (rs) is F?
     for (int i = 1; i < 6; i++){
-		  if (ch == i && rat[i].busy){                    //check RAT first whether has correspond F? 
+      if (ch == i && rat[i].busy){                    //check RAT first whether has correspond F? 
         rs[pos].rs1 = rat[i].rat;                     //if yes -> put RAT value to RS
         break;}
       else if (ch == i && !rat[i].busy){              //if no -> put RF value to RS
